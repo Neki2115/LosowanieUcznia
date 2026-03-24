@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="school.Views.EditPage"
+             Title="EDIT">
+
+    <VerticalStackLayout Padding="16" Spacing="12">
+
+        <Entry
+            x:Name="classNameEntry"
+            Placeholder="Class name (e.g. 1A)"
+            FontAttributes="Bold"
+            Margin="0,4" />
+
+        <Entry
+            x:Name="nameEntry"
+            Placeholder="Student name"
+            Keyboard="Text"
+            Margin="0,4" />
+
+        <Button
+            Text="Add student"
+            Style="{StaticResource PrimaryButton}"
+            Clicked="OnAdd"
+            Margin="0,6" />
+
+        <CollectionView
+            x:Name="studentsList"
+            Margin="0,8">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="6" ColumnSpacing="8">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="48" />
+                            <ColumnDefinition Width="48" />
+                        </Grid.ColumnDefinitions>
+
+                        <Frame
+                            Grid.Column="0"
+                            Style="{StaticResource CardStyle}">
+                            <Label
+                                Text="{Binding Name}"
+                                Style="{StaticResource BodyLabel}" />
+                        </Frame>
+
+                        <Button
+                            Grid.Column="1"
+                            Text="Edit"
+                            FontAttributes="Bold"
+                            Style="{StaticResource PrimaryIconButton}"
+                            Clicked="OnEditStudent" />
+
+                        <Button
+                            Grid.Column="2"
+                            Text="Delete"
+                            FontAttributes="Bold"
+                            Style="{StaticResource DangerIconButton}"
+                            Clicked="OnDeleteStudent" />
+
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+        <Button
+            Text="Save"
+            Style="{StaticResource EditButton}"
+            Clicked="OnSave"
+            Margin="0,8" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

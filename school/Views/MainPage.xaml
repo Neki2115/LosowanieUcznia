@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="school.Views.MainPage"
+             Title="MAIN">
+
+    <VerticalStackLayout Padding="16" Spacing="12">
+
+        <Entry
+            x:Name="classEntry"
+            Placeholder="Class name (e.g. 1A)" />
+
+        <Button
+            Text="Add class"
+            Style="{StaticResource PrimaryButton}"
+            Clicked="OnAddClass" />
+
+        <Button
+            x:Name="toggleClassesButton"
+            Text="Show classes"
+            Style="{StaticResource GhostButton}"
+            Clicked="OnToggleClasses" />
+
+        <Frame
+            x:Name="classesPanel"
+            IsVisible="False"
+            Padding="6"
+            CornerRadius="8"
+            BackgroundColor="{StaticResource Card}"
+            HasShadow="False">
+
+            <CollectionView
+                x:Name="classesList"
+                SelectionMode="Single"
+                SelectionChanged="OnClassSelectionChanged">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="6" ColumnSpacing="8" VerticalOptions="Center">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="48" />
+                                <ColumnDefinition Width="48" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label
+                                Text="{Binding .}"
+                                Style="{StaticResource BodyLabel}" />
+
+                            <Button
+                                Grid.Column="1"
+                                Text="Edit"
+                                Style="{StaticResource PrimaryIconButton}"
+                                Clicked="OnEditClass"
+                                CommandParameter="{Binding .}" />
+
+                            <Button
+                                Grid.Column="2"
+                                Text="Delete"
+                                Style="{StaticResource DangerIconButton}"
+                                Clicked="OnDeleteClass"
+                                CommandParameter="{Binding .}" />
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+        </Frame>
+
+        <Label
+            x:Name="resultLabel"
+            Text=""
+            TextColor="Red"
+            FontAttributes="Bold"
+            Margin="6,4,6,0" />
+
+        <HorizontalStackLayout Spacing="8">
+            <Button
+                Text="Draw student"
+                Style="{StaticResource PrimaryButton}"
+                Clicked="OnDrawStudent" />
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+
+</ContentPage>

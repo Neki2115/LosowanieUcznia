@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="Primary">#0B63CE</Color>
+    <Color x:Key="PrimaryDark">#084EA1</Color>
+    <Color x:Key="PrimaryLight">#E6F0FF</Color>
+    <Color x:Key="OnPrimary">#FFFFFF</Color>
+
+    <Color x:Key="Secondary">#00A86B</Color>
+    <Color x:Key="OnSecondary">#FFFFFF</Color>
+
+    <Color x:Key="Surface">#FFFFFF</Color>
+    <Color x:Key="Background">#F4F6F8</Color>
+    <Color x:Key="Card">#FFFFFF</Color>
+    <Color x:Key="Border">#E3E7EB</Color>
+
+    <Color x:Key="TextPrimary">#0F1720</Color>
+    <Color x:Key="TextSecondary">#5F6B73</Color>
+    <Color x:Key="Muted">#9AA6AD</Color>
+
+    <Color x:Key="Success">#28A745</Color>
+    <Color x:Key="Danger">#E23E57</Color>
+
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}" />
+    <SolidColorBrush x:Key="OnPrimaryBrush" Color="{StaticResource OnPrimary}" />
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}" />
+    <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource Surface}" />
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource Background}" />
+    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource Border}" />
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextPrimary}" />
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="{StaticResource TextSecondary}" />
+    <SolidColorBrush x:Key="MutedBrush" Color="{StaticResource Muted}" />
+</ResourceDictionary>
